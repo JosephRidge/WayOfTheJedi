@@ -15,9 +15,11 @@ def maskify(cc):
     print(cc)
     x = cc[:-4]
     print(x)
-    y = response = re.sub(r"[a-zA-Z0-9+.\s! # $ % &: ’()@' * + / = ? ^ _ ` { | } ~ -]","#",x)
+    # y = response = re.sub(r"([[a-zA-Z0-9.!#$%&\"`*+/\\=?;:^_{|}~-])+|\s+[+]]","#",x)
+    y = response = re.sub(r"[\d\D\w\W]","#",x)
     print(y)
     z =cc[-4:] 
+    print(z)
     return(y+z)
 
 #  input your card number / phone number / secret to phone
